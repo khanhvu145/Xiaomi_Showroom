@@ -1,0 +1,149 @@
+@media (max-width: 1199.98px){
+    .title{
+        font-size: 3.6rem;
+    }
+    .intro{
+        font-size: 2.8rem;
+    }
+    .desc{
+        font-size: 2rem;
+    }
+    .footer__left-information{
+        margin-left: 80px;
+    }
+    .banner__content{
+        width: 90%;
+    }
+}
+@media (max-width: 991.98px){
+    .header__nav{
+        display: none;
+    }
+    ion-icon[name='menu-outline']{
+        display: block;
+    }
+    .header__mobile-nav{
+        display: block;
+    }
+    .footer__main{
+        flex-direction: column;
+    }
+    .footer__right{
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 800px){
+    .news__content{
+        flex-direction: column;
+    }
+    .news__item:not(:first-child){
+        margin-top: 36px;
+    }
+    .banner__content{
+        font-size: 2.8rem;
+        width: 100%;
+    }
+}
+
+@media (max-width: 767.98px){
+    .gallery__item{
+        flex-direction: column-reverse;
+    }
+    .gallery__item:nth-child(2n) {
+        flex-direction: column-reverse;
+    }
+    .gallery__item-content {
+        padding-right: 100px;
+        padding-left: 0;
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 24px;
+    }
+    .gallery__item:nth-child(2n) .gallery__item-content {
+        padding-right: 0;
+        padding-left: 100px;
+    }
+    .gallery__item-img{
+        width: 70%;
+    }
+    .category__item-name{
+        font-size: 2.4rem;
+    }
+    .gallery__item-number{
+        font-size: 20rem;
+        top: -120px;
+    }
+    .category__content{
+        grid-template-areas:
+        "item2 item1"
+        "item3 item4"
+        "item5 item6";
+    }
+    .banner__content{
+        font-size: 2.4rem;
+        width: 100%;
+    }
+    .header__mobile-nav{
+        width: 50%;
+    }
+}
+
+@media (max-width: 575.98px){
+    .header__mobile-nav{
+        width: 100%;
+    }
+    .hero__main-content{
+        max-width: 70%;
+    }
+    .title{
+        font-size: 3rem;
+    }
+    .intro{
+        font-size: 2rem;
+    }
+    .desc{
+        font-size: 1.6rem;
+    }
+    .link{
+        font-size: 1.2rem;
+    }
+    .heading-content{
+        font-size: 3.6rem;
+    }
+    .category__item-name{
+        font-size: 2rem;
+    }
+    .banner__content{
+        font-size: 2rem;
+    }
+    .footer__left{
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer__left-information{
+        margin: 0;
+    }
+    .logo{
+        margin: auto;
+    }
+    .footer__left-network{
+        margin-bottom: 60px;
+    }
+    .gallery__item-content {
+        padding-right: 60px;
+    }
+    .gallery__item:nth-child(2n) .gallery__item-content {
+        padding-left: 60px;
+    }
+    .gallery__item-content::after{
+        width: 60px;
+    }
+    .gallery__footer-content{
+        font-size: 1.6rem;
+    }
+    .hero__page-number{
+        font-size: 1.6rem;
+        padding-left: 8px;
+    }
+}

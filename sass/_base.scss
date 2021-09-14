@@ -1,0 +1,219 @@
+html{
+    font-size: 62.5%;
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+        background: $black-color; 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 6px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: $white-color; 
+    }
+}
+
+body{
+    font-family: $font-content;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: $black-color;
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: $white-dark;
+    scroll-behavior: smooth;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.logo{
+    width: 56px;
+}
+
+.btn{
+    display: block;
+    max-width: 180px;
+    min-width: 60px;
+    font-family: $font-button;
+    text-align: center;
+}
+
+.title{
+    font-family: $font-title;
+    font-size: 4.8rem;
+    z-index: 1;
+}
+.intro{
+    font-family: $font-title;
+    font-size: 3.6rem;
+    font-weight: 300;
+    margin-top: 32px;
+    z-index: 1;
+}
+.desc{
+    font-size: 2.4rem;
+    margin-top: 32px;
+    font-weight: 300;
+    line-height: 2;
+    z-index: 1;
+}
+.link{
+    margin-top: 32px;
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 56px;
+    &::before{
+        content: "";
+        flex: 1;
+        transform: translateY(-50%);
+        height: 1px;
+        background-color: #ccc;
+    }
+    &::after{
+        content: "";
+        flex: 1;
+        transform: translateY(-50%);
+        height: 1px;
+        background-color: #ccc;
+    }
+}
+
+.heading-content {
+    font-size: 4.2rem;
+    font-family: $font-title;
+    text-transform: uppercase;
+    color: rgb(122, 122, 122);
+    font-weight: 300;
+    letter-spacing: 16px;
+    margin: 0 48px;
+    text-align: center;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    // display: none;
+}
+
+.back-top-btn{
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: $white-color;
+    bottom: 32px;
+    right: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    cursor: pointer;
+    transition: all 0.8s;
+    opacity: 0;
+}
+.back-top-btn.active {
+    opacity: 1;
+}
+//Custom keyframes for animations
+@keyframes translate {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(6px);
+    }
+}
+
+@keyframes slideToBottom {
+    from{
+        bottom: 0;
+        opacity: 0;
+    }
+    to{
+        bottom: -40px;
+        opacity: 1;
+    }
+}
+
+@keyframes slideToLeft {
+    from{
+        transform: translateX(40%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideToRight {
+    from{
+        transform: translateX(-40%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes scale {
+    from{
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes banner {
+    from{
+        opacity: 0.6;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes pageSlide {
+    from{
+        width: 30%;
+        opacity: 0;
+    }
+    to{
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes translateY {
+    from{
+        transform: translateY(-8px);
+    }
+    to{
+        transform: translateY(0);
+    }
+}

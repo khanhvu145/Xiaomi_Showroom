@@ -1,0 +1,179 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 99;
+    transition: 0.8s;
+    -webkit-transition: 0.8s;
+    &__main{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 32px 0;
+        transition: 0.8s;
+        -webkit-transition: 0.8s;
+    }
+    &__nav{
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        &-link{
+            display: block;
+            text-decoration: none;
+            font-family: $font-button;
+            color: $black-color;
+            font-weight: bold;
+            padding: 16px 24px;
+            position: relative;
+            transition: 0.8s;
+            -webkit-transition: 0.8s;
+            &::after{
+                content: "";
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: 0;
+                left: 50%;
+                background-color: $primary-color;
+                transform: translateX(-50%);
+                transition: 0.5s;
+                -webkit-transition: 0.5s;
+                opacity: 0;
+            }
+            &:hover::after{
+                width: 40%;
+                opacity: 1;
+            }
+            &.active::after{
+                width: 40%;
+                opacity: 1;
+            }
+        }
+    }
+    &__control{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        &-search{
+            padding: 12px;
+            font-size: 2rem;
+            transition: 0.8s;
+            -webkit-transition: 0.8s;
+            &:hover{
+                background-color: rgba(0, 0, 0, 0.03);
+            }
+        }
+        &-content{
+            display: none;
+            border-radius: 4px;
+            overflow: hidden;
+            align-items: center;
+            background-color: $white-color;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            position: absolute;
+            right: 10px;
+            bottom: -40px;
+            animation: slideToBottom ease-in 0.3s;
+        }
+        &-input{
+            padding: 12px;
+            border: none;
+            outline: none;
+            background-color: $white-color;
+        }
+        &-btn{
+            display: block;
+            padding: 12px;
+            border: none;
+            background-color: $white-color;
+            color: $black-color;
+            font-weight: bold;
+            transition: all ease-in 0.3s;
+            position: relative;
+            &:hover{
+                color: $primary-color;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                top: 8px;
+                bottom: 8px;
+                left: 0;
+                width: 2px;
+                background-color: #ccc;
+            }
+        }
+        &-link{
+            display: block;
+            padding: 12px 0 12px 12px;
+            font-family: $font-button;
+            color: $primary-color;
+            font-weight: bold;
+            opacity: 0.6;
+            transition: all ease-in 0.3s;
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+    &__mobile-open{
+        font-size: 3.2rem;
+        padding: 12px 0 12px 24px;
+        display: none;
+        transition: 0.8s;
+        -webkit-transition: 0.8s;
+    }
+    &__mobile-close{
+        font-size: 3.2rem;
+        padding: 16px;
+        color: $white-color;
+        cursor: pointer;
+    }
+    &__overlay{
+        display: none;
+    }
+    &__mobile-nav{
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 40%;
+        max-width: 100%;
+        background-color: $black-color;
+        z-index: 101;
+        transform: translateX(100%);
+        opacity: 0;
+        transition: all linear 0.2s;
+        display: none;
+    }
+    &__mobile-link {
+        display: block;
+        color: $white-color;
+        text-align: center;
+        padding: 24px;
+        font-family: $font-button;
+        font-weight: bold;
+        font-size: 2rem;
+        position: relative;
+        &.active{
+            color: $primary-color;
+            background-color: rgba(192,192,192,0.3);
+        }
+    }
+}
+
+.header.scroll {
+    background-color: rgba(0, 0, 0, 0.5);
+    .header__nav-link,
+    .header__control-search{
+        color: $white-color;
+    }
+    .header__main{
+        padding: 8px 0;
+    }
+    .header__mobile-open{
+        color: $white-color;
+    }
+}

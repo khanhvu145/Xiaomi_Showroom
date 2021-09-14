@@ -1,0 +1,134 @@
+.hero{
+    position: relative;
+    z-index: 1;
+    &__main{
+        &-item{
+            position: relative;
+            display: none;
+            animation: banner ease-in 0.5s;
+            cursor: grab;
+            &.active{
+                display: block;
+            }
+        }
+        &-banner{
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        &-img{
+            width: 100%;
+            min-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &-content{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            max-width: 50%;
+            user-select: none;
+        }
+        &-title{
+            animation: slideToLeft linear 0.4s;
+        }
+        &-intro{
+            animation: slideToRight linear 0.6s;
+        }
+        &-desc{
+            animation: slideToLeft linear 0.8s;
+        }
+        &-link{
+            border: 1px solid $black-color;
+            color: $black-color;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            transition: all ease-in 0.3s;
+            animation: scale ease-in-out 0.8s;
+            border-radius: 4px;
+            &:hover{
+                background: linear-gradient(to bottom right, #fdb785, $primary-color);
+                border: 1px solid #fdb785;
+                color: $white-color;
+                &>ion-icon[name="arrow-forward-outline"]{
+                    animation: translate ease-in 0.3s forwards;
+                }
+            }
+            &>ion-icon[name="arrow-forward-outline"]{
+                margin-left: 6px;
+            }
+        }
+    }
+    &__arrow{
+        position: absolute;
+        right: 36px;
+        bottom: 36px;
+        cursor: pointer;
+        display: flex;
+        &-btn{
+            font-size: 4.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            border: 1px solid $black-color;
+            transition: all ease-in 0.3s;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            &:hover{
+                background-color: $primary-color;
+                border: 1px solid $primary-color;
+                color: $white-color;
+            }
+        }
+        &-left{
+            margin-right: 6px;
+        }
+        &>ion-icon[name="chevron-back-outline"]{
+            margin-left: -6px;
+        }
+        &>ion-icon[name="chevron-forward-outline"]{
+            margin-right: -6px;
+        }
+    }
+
+    &__page{
+        position: absolute;
+        right: 36px;
+        top: 50%;
+        transform: translateY(-50%);
+        &-number{
+            display: block;
+            padding-bottom: 12px;
+            margin-top: 16px;
+            padding-left: 16px;
+            font-size: 2.4rem;
+            font-weight: bold;
+            font-family: $font-button;
+            position: relative;
+            &::after{
+                content: "";
+                position: absolute;
+                height: 4px;
+                width: 30%;
+                right: 0;
+                bottom: 0;
+                background-color: rgba(0, 0, 0, 0.2);
+            }
+            &.active{
+                animation: translateY ease-in-out 0.3s;
+                &::after{
+                    width: 100%;
+                    background-color: $black-color;
+                    animation: pageSlide ease-in-out 0.5s;
+                }
+            }
+        }
+    }
+}
