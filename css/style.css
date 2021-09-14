@@ -77,6 +77,10 @@ body {
   padding: 0 15px;
 }
 
+.main {
+  overflow: hidden;
+}
+
 .logo {
   width: 56px;
 }
