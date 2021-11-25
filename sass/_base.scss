@@ -135,6 +135,7 @@ body{
     cursor: pointer;
     transition: all 0.8s;
     opacity: 0;
+    z-index: 10;
 }
 .back-top-btn.active {
     opacity: 1;

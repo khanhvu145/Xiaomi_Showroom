@@ -14,6 +14,9 @@ const headerOverlay = document.querySelector('.header__overlay');
 const menuBtn = document.querySelector('.header__mobile-open');
 const closeBtn = document.querySelector('.header__mobile-close');
 const mobileNav = document.querySelector('.header__mobile-nav');
+const sections = document.querySelectorAll('section[id]');
+const headerNavbarItems = document.querySelectorAll('.header__nav-link');
+const navTabMobItem = document.querySelectorAll('.header__mobile-link');
 
 var isAppear = false;
 let isDragging = false;
@@ -86,7 +89,6 @@ const app = {
         //Xử lý header
         window.addEventListener('scroll', function() {
             const offset = window.pageYOffset;
-            
             if(offset > screen.availHeight - 150) {
                 header.classList.add('scroll');
                 backTopBtn.classList.add('active');
@@ -95,6 +97,7 @@ const app = {
                 header.classList.remove('scroll');
                 backTopBtn.classList.remove('active');
             }
+            app.scrollToSection();
         })
         
         //Xử lý click nút back top
@@ -136,6 +139,11 @@ const app = {
             mobileNav.style.transform = 'translateX(100%)';
             mobileNav.style.opacity = 0;
         }
+
+        //Xử lý thanh menu khi scroll
+        // window.addEventListener('scroll', function(){
+        //     app.scrollToSection();
+        // })
     },
 
     nextSlide: function(){
@@ -204,6 +212,41 @@ const app = {
     
     getPositionX: function(e){
         return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+    },
+
+    closeNavTabMob: function(){
+        headerOverlay.style.display = 'none';
+        mobileNav.style.opacity = '0';
+        mobileNav.style.transform = 'translateX(100%)';
+    }, 
+
+    //Hàm xử lý click menu
+    scrollToSection: function(){
+        let current = '';
+        sections.forEach(function(section){
+            const sectionTop = section.offsetTop;
+            const sectionHeigh = section.clientHeight;
+            if(pageYOffset >= (sectionTop - sectionHeigh / 5)){
+                current = section.getAttribute('id');
+            }
+        })
+        
+        headerNavbarItems.forEach(function(item){
+            item.classList.remove('active');
+            if(item.getAttribute('href') === `#${current}`){
+                item.classList.add('active');
+            }
+        })
+
+        navTabMobItem.forEach(function(item){
+            item.classList.remove('active');
+            if(item.getAttribute('href') === `#${current}`){
+                item.classList.add('active');
+            }
+            item.onclick = function(){
+                app.closeNavTabMob();
+            }
+        })
     },
 
     start: function(){
